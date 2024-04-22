@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Detection</title>
+</head>
+<body>
+    <h1>Plant Detection</h1>
+
+    <form method="post" action="{% url 'predict_api' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Display prediction result -->
+    <div id="prediction-result"></div>
+
+    <!-- Include any additional styling or JavaScript as needed -->
+</body>
+</html>
